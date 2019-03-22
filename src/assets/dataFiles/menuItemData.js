@@ -1,48 +1,49 @@
 module.exports = [
   {
     name: 'Illustration',
-    to: '/',
+    route: '/',
   },
   {
+    // Follow this pattern if there is a sub-menu like Character Design
     name: 'Character Design',
-    to: '/characterDesign',
+    route: '/characterDesign',
     subMenu: [
       {
         subName: 'Fantasy',
-        subTo: '/fantasy',
+        subRoute: '/fantasy',
       },
       {
         subName: 'Critters',
-        subTo: '/critters',
+        subRoute: '/critters',
       },
       {
         subName: 'Mermaids',
-        subTo: '/mermaids',
+        subRoute: '/mermaids',
       },
     ],
   },
   {
     name: 'The Wonderful World of Corporate Synergy',
-    to: '/wwocs',
+    route: '/wwocs',
   },
   {
     name: 'Holiday Art',
-    to: '/holiday',
+    route: '/holiday',
   },
   {
     name: 'Commissions',
-    to: '/commissions',
+    route: '/commissions',
   },
   {
     name: 'Games',
-    to: '/games',
+    route: '/games',
   },
   {
     name: 'Book Credits',
-    to: '/books',
+    route: '/books',
   },
   {
-    name: 'Store',
-    to: 'https://worldbuildersmarket.com/collections/nate-taylor',
+    name: 'Sroutere',
+    route: 'https://worldbuildersmarket.com/collections/nate-taylor',
   },
 ];
