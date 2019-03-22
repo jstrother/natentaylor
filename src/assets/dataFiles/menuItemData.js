@@ -43,7 +43,7 @@ module.exports = [
     route: '/books',
   },
   {
-    name: 'Sroutere',
+    name: 'Store',
     route: 'https://worldbuildersmarket.com/collections/nate-taylor',
   },
 ];
