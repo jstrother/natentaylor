@@ -1,49 +1,53 @@
 module.exports = [
   {
-    name: 'Illustration',
+    routeName: 'Illustration',
     route: '/',
   },
   {
     // Follow this pattern if there is a sub-menu like Character Design
-    name: 'Character Design',
+    routeName: 'Character Design',
     route: '/characterDesign',
     subMenu: [
       {
-        subName: 'Fantasy',
+        subRouteName: 'Fantasy',
         subRoute: '/fantasy',
       },
       {
-        subName: 'Critters',
+        subRouteName: 'Critters',
         subRoute: '/critters',
       },
       {
-        subName: 'Mermaids',
+        subRouteName: 'Mermaids',
         subRoute: '/mermaids',
       },
     ],
   },
   {
-    name: 'The Wonderful World of Corporate Synergy',
+    routeName: 'The Wonderful World of Corporate Synergy',
     route: '/wwocs',
   },
   {
-    name: 'Holiday Art',
+    routeName: 'Holiday Art',
     route: '/holiday',
   },
   {
-    name: 'Commissions',
+    routeName: 'Commissions',
     route: '/commissions',
   },
   {
-    name: 'Games',
+    routeName: 'Games',
     route: '/games',
   },
   {
-    name: 'Book Credits',
+    routeName: 'Book Credits',
     route: '/books',
   },
   {
-    name: 'Store',
+    routeName: 'Contact',
+    route: '/contact',
+  },
+  {
+    routeName: 'Store',
     route: 'https://worldbuildersmarket.com/collections/nate-taylor',
   },
 ];

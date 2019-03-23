@@ -17,13 +17,11 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 .app {
   height: 100%;
   width: 100%;
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
   background-color: $backgroundColor;
 }
 </style>
