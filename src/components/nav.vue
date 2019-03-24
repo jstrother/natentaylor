@@ -2,15 +2,16 @@
   <nav>
     <div v-for="(menuItem, index) in menuItemData" :key="index">
       <SubMenu v-if="menuItem.subMenu" :menu-item="menuItem" />
-      <!-- <router-link
-        v-else-if="(menuItem.route = store)"
-        :to="menuItem.route"
-        target="_blank"
-      ></router-link> -->
       <router-link class="routerLink" active-class="active" v-else :to="menuItem.route" exact>
         {{ menuItem.routeName }}
       </router-link>
     </div>
+    <a
+      href="https://worldbuildersmarket.com/collections/nate-taylor"
+      target="_blank"
+      class="routerLink"
+      >Store</a
+    >
   </nav>
 </template>
 

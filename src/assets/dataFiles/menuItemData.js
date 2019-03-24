@@ -46,8 +46,4 @@ module.exports = [
     routeName: 'Contact',
     route: '/contact',
   },
-  {
-    routeName: 'Store',
-    route: 'https://worldbuildersmarket.com/collections/nate-taylor',
-  },
 ];

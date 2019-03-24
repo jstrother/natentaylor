@@ -6,21 +6,20 @@
     <i
       class="fas fa-arrow-alt-circle-down icon"
       :class="{ hidden: !subMenuHidden }"
-      @click="this.subMenuToggle()"
+      @click="subMenuToggle"
     ></i>
     <i
       class="fas fa-arrow-alt-circle-up icon"
       :class="{ hidden: subMenuHidden }"
-      @click="this.subMenuToggle()"
+      @click="subMenuToggle"
     ></i>
-    <div class="subMenu" v-for="(subMenuItem, index) in menuItem.subMenu" :key="index">
-      <router-link
-        class="routerLink"
-        :class="{ hidden: subMenuHidden }"
-        active-class="active"
-        :to="subMenuItem.subRoute"
-        exact
-      >
+    <div
+      class="subMenu"
+      :class="{ hidden: subMenuHidden }"
+      v-for="(subMenuItem, index) in menuItem.subMenu"
+      :key="index"
+    >
+      <router-link class="routerLink" active-class="active" :to="subMenuItem.subRoute" exact>
         {{ subMenuItem.subRouteName }}
       </router-link>
     </div>
@@ -40,7 +39,7 @@ export default {
     };
   },
   methods: {
-    subMenuToggle() {
+    subMenuToggle: function() {
       return !this.subMenuHidden;
     },
   },
