@@ -43,7 +43,7 @@ module.exports = [
     subMenu: [
       {
         path: `${thumbnail}nectarmancer-242x300.jpg`,
-        to: '/fantasy',
+        route: '/fantasy',
         subImages: [
           {
             thumbnail: `${thumbnail}animalGirl_redux2-1-258x300.jpg`,
@@ -109,7 +109,7 @@ module.exports = [
       },
       {
         path: `${thumbnail}corgi-300x300`,
-        to: '/critters',
+        route: '/critters',
         subImages: [
           {
             thumbnail: `${thumbnail}corgi-300x300.jpg`,
@@ -155,7 +155,7 @@ module.exports = [
       },
       {
         path: `${thumbnail}badaliMermaid_sfw-233x300`,
-        to: '/mermaids',
+        route: '/mermaids',
         subImages: [
           {
             thumbnail: `${thumbnail}badaliMermaid_sfw-233x300.jpg`,
@@ -331,7 +331,7 @@ module.exports = [
   },
   {
     // Games
-    to: '/games',
+    route: '/games',
     images: [
       /* Follow this pattern if the page has sub headings like Games  */
       {
@@ -453,7 +453,7 @@ module.exports = [
   },
   {
     name: 'Book Credits',
-    to: '/books',
+    route: '/books',
     images: [
       {
         subHeading: 'Cover & Interiors',

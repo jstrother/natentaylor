@@ -7,29 +7,16 @@
         class="banner"
       />
     </a>
-    <nav>
-      <ul>
-        <li
-          is="router-link"
-          v-for="(menuItem, index) in menuItemData"
-          :to="menuItem.route"
-          :key="index"
-        >
-          {{ menuItem.routeName }}
-        </li>
-      </ul>
-    </nav>
+    <Nav />
   </header>
 </template>
 
 <script>
-import menuItemData from '../assets/dataFiles/menuItemData.js';
+import Nav from './nav.vue';
 
-module.exports = {
-  data: function() {
-    return {
-      menuItemData,
-    };
+export default {
+  components: {
+    Nav,
   },
 };
 </script>

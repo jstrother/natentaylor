@@ -9,5 +9,4 @@ export default new Vuex.Store({
     routeName: 'Illustration',
   },
   mutations: {},
-  actions: {},
 });
