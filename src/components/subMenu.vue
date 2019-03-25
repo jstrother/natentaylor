@@ -40,7 +40,7 @@ export default {
   },
   methods: {
     subMenuToggle: function() {
-      return !this.subMenuHidden;
+      this.subMenuHidden = !this.subMenuHidden;
     },
   },
 };
