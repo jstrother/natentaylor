@@ -1,9 +1,12 @@
+const scss = './src/scss/';
+
 module.exports = {
   css: {
     loaderOptions: {
       sass: {
         data: `
-            @import "./src/scss/_variables.scss";
+            @import "${scss}_variables.scss";
+            @import "${scss}_fonts.scss";
           `,
       },
     },

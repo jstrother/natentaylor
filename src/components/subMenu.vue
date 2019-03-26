@@ -1,18 +1,20 @@
 <template>
   <div class="subMenuCatcher">
-    <router-link class="routerLink" active-class="active" :to="menuItem.route" exact>
-      {{ menuItem.routeName }}
-    </router-link>
-    <i
-      class="fas fa-arrow-alt-circle-down icon"
-      :class="{ hidden: !subMenuHidden }"
-      @click="subMenuToggle"
-    ></i>
-    <i
-      class="fas fa-arrow-alt-circle-up icon"
-      :class="{ hidden: subMenuHidden }"
-      @click="subMenuToggle"
-    ></i>
+    <div class="subMenuTitle">
+      <router-link class="routerLink titleName" active-class="active" :to="menuItem.route" exact>
+        {{ menuItem.routeName }}
+      </router-link>
+      <i
+        class="fas fa-arrow-alt-circle-down icon"
+        :class="{ hidden: !subMenuHidden }"
+        @click="subMenuToggle"
+      ></i>
+      <i
+        class="fas fa-arrow-alt-circle-up icon"
+        :class="{ hidden: subMenuHidden }"
+        @click="subMenuToggle"
+      ></i>
+    </div>
     <div
       class="subMenu"
       :class="{ hidden: subMenuHidden }"
@@ -48,10 +50,17 @@ export default {
 
 <style scoped lang="scss">
 .subMenuCatcher {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
   margin: auto;
+
+  .subMenuTitle {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+
+    .titleName {
+      padding-right: 0.5em;
+    }
+  }
 
   .subMenu {
     display: flex;

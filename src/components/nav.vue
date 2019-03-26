@@ -33,7 +33,10 @@ export default {
 
 <style scoped lang="scss">
 nav {
+  font-family: 'FiraSansRegular', sans-serif;
+  font-size: 1.5em;
   margin: auto;
+  max-width: 66%;
   text-align: center;
 
   .routerLink {
@@ -43,6 +46,10 @@ nav {
 
   .active {
     color: $activeColor;
+  }
+
+  @media (min-width: $gtTabletP) {
+    font-size: 1em;
   }
 }
 </style>
