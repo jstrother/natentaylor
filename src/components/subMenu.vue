@@ -1,7 +1,13 @@
 <template>
   <div class="subMenuCatcher">
     <div class="subMenuTitle">
-      <router-link class="routerLink titleName" active-class="active" :to="menuItem.route" exact>
+      <router-link
+        class="routerLink titleName"
+        active-class="active"
+        :to="menuItem.route"
+        @click="updateRoute(menuItem)"
+        exact
+      >
         {{ menuItem.routeName }}
       </router-link>
       <i
@@ -21,14 +27,22 @@
       v-for="(subMenuItem, index) in menuItem.subMenu"
       :key="index"
     >
-      <router-link class="routerLink" active-class="active" :to="subMenuItem.subRoute" exact>
-        {{ subMenuItem.subRouteName }}
+      <router-link
+        class="routerLink"
+        active-class="active"
+        :to="subMenuItem.route"
+        @click="updateRoute(menuItem)"
+        exact
+      >
+        {{ subMenuItem.routeName }}
       </router-link>
     </div>
   </div>
 </template>
 
 <script>
+import { mapMutations } from 'vuex';
+
 const subMenuHidden = true;
 
 export default {
@@ -41,6 +55,7 @@ export default {
     };
   },
   methods: {
+    ...mapMutations(['updateRoute']),
     subMenuToggle: function() {
       this.subMenuHidden = !this.subMenuHidden;
     },

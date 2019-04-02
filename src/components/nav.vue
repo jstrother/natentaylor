@@ -8,7 +8,14 @@
     <div class="openMenu" :class="{ hidden: showMenu }">
       <div v-for="(menuItem, index) in menuItemData" :key="index" class="menuItem">
         <SubMenu v-if="menuItem.subMenu" :menu-item="menuItem" />
-        <router-link class="routerLink" active-class="active" v-else :to="menuItem.route" exact>
+        <router-link
+          class="routerLink"
+          active-class="active"
+          v-else
+          :to="menuItem.route"
+          @click="updateRoute(menuItem)"
+          exact
+        >
           {{ menuItem.routeName }}
         </router-link>
       </div>
@@ -24,6 +31,7 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex';
 import SubMenu from './subMenu.vue';
 import menuItemData from '../assets/dataFiles/menuItemData.js';
 
@@ -38,6 +46,7 @@ export default {
     };
   },
   methods: {
+    ...mapMutations(['updateRoute']),
     toggleMenu: function() {
       this.showMenu = !this.showMenu;
     },

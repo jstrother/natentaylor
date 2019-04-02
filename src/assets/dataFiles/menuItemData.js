@@ -9,16 +9,16 @@ module.exports = [
     route: '/characterDesign',
     subMenu: [
       {
-        subRouteName: 'Fantasy',
-        subRoute: '/fantasy',
+        routeName: 'Fantasy',
+        route: '/fantasy',
       },
       {
-        subRouteName: 'Critters',
-        subRoute: '/critters',
+        routeName: 'Critters',
+        route: '/critters',
       },
       {
-        subRouteName: 'Mermaids',
-        subRoute: '/mermaids',
+        routeName: 'Mermaids',
+        route: '/mermaids',
       },
     ],
   },

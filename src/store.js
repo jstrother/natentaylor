@@ -8,5 +8,10 @@ export default new Vuex.Store({
     route: '/',
     routeName: 'Illustration',
   },
-  mutations: {},
+  mutations: {
+    updateRoute(state, payload) {
+      state.route = payload.route;
+      state.routeName = payload.routeName;
+    },
+  },
 });
