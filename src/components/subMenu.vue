@@ -58,7 +58,7 @@ export default {
     justify-content: center;
 
     .titleName {
-      padding-right: 0.5em;
+      padding-right: $dropDownPadding;
     }
   }
 

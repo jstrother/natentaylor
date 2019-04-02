@@ -1,17 +1,25 @@
 <template>
   <nav>
-    <div v-for="(menuItem, index) in menuItemData" :key="index">
-      <SubMenu v-if="menuItem.subMenu" :menu-item="menuItem" />
-      <router-link class="routerLink" active-class="active" v-else :to="menuItem.route" exact>
-        {{ menuItem.routeName }}
-      </router-link>
+    <div class="menuToggle" @click="toggleMenu">
+      <p>Menu</p>
+      <i class="fas fa-arrow-alt-circle-down icon" :class="{ hidden: !showMenu }"></i>
+      <i class="fas fa-arrow-alt-circle-up icon" :class="{ hidden: showMenu }"></i>
     </div>
-    <a
-      href="https://worldbuildersmarket.com/collections/nate-taylor"
-      target="_blank"
-      class="routerLink"
-      >Store</a
-    >
+    <div class="openMenu" :class="{ hidden: showMenu }">
+      <div v-for="(menuItem, index) in menuItemData" :key="index" class="menuItem">
+        <SubMenu v-if="menuItem.subMenu" :menu-item="menuItem" />
+        <router-link class="routerLink" active-class="active" v-else :to="menuItem.route" exact>
+          {{ menuItem.routeName }}
+        </router-link>
+      </div>
+      <a
+        href="https://worldbuildersmarket.com/collections/nate-taylor"
+        target="_blank"
+        class="routerLink"
+      >
+        Store
+      </a>
+    </div>
   </nav>
 </template>
 
@@ -26,7 +34,13 @@ export default {
   data: function() {
     return {
       menuItemData,
+      showMenu: false,
     };
+  },
+  methods: {
+    toggleMenu: function() {
+      this.showMenu = !this.showMenu;
+    },
   },
 };
 </script>
@@ -34,10 +48,28 @@ export default {
 <style scoped lang="scss">
 nav {
   font-family: 'FiraSansRegular', sans-serif;
-  font-size: 1.5em;
+  font-size: 1.25em;
   margin: auto;
   max-width: 66%;
   text-align: center;
+
+  .menuToggle {
+    cursor: pointer;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: $routerLinkColor;
+
+    p {
+      padding-right: $dropDownPadding;
+    }
+  }
+
+  .menuItem {
+    margin: 0.5em;
+  }
 
   .routerLink {
     text-decoration: none;
@@ -46,6 +78,10 @@ nav {
 
   .active {
     color: $activeColor;
+  }
+
+  .hidden {
+    display: none;
   }
 
   @media (min-width: $gtTabletP) {
