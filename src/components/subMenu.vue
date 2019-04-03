@@ -4,12 +4,11 @@
       <router-link
         class="routerLink titleName"
         active-class="active"
-        :to="menuItem.route"
-        @click="updateRoute(menuItem)"
+        :to="imageItem.route"
+        @click="updateRoute(imageItem)"
         exact
+        >{{ imageItem.routeName }}</router-link
       >
-        {{ menuItem.routeName }}
-      </router-link>
       <i
         class="fas fa-arrow-alt-circle-down icon"
         :class="{ hidden: !subMenuHidden }"
@@ -24,25 +23,22 @@
     <div
       class="subMenu"
       :class="{ hidden: subMenuHidden }"
-      v-for="(subMenuItem, index) in menuItem.subMenu"
+      v-for="(subMenuItem, index) in imageItem.subMenu"
       :key="index"
     >
       <router-link
         class="routerLink"
         active-class="active"
         :to="subMenuItem.route"
-        @click="updateRoute(menuItem)"
+        @click="updateRoute(imageItem.routeName)"
         exact
+        >{{ subMenuItem.routeName }}</router-link
       >
-        {{ subMenuItem.routeName }}
-      </router-link>
     </div>
   </div>
 </template>
 
 <script>
-import { mapMutations } from 'vuex';
-
 const subMenuHidden = true;
 
 export default {
@@ -55,7 +51,9 @@ export default {
     };
   },
   methods: {
-    ...mapMutations(['updateRoute']),
+    updateRoute: function(routeName) {
+      this.$store.dispatch('setRoute', routeName);
+    },
     subMenuToggle: function() {
       this.subMenuHidden = !this.subMenuHidden;
     },

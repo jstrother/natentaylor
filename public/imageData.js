@@ -11,7 +11,7 @@ Otherwise, it will not work at all.
 
 module.exports = [
   {
-    // Illustraion
+    routeName: 'Illustration',
     route: '/',
     images: [
       {
@@ -37,12 +37,13 @@ module.exports = [
     ],
   },
   {
-    // Character Design
+    routeName: 'Character Design',
     route: '/characterdesign',
     /* Follow this pattern if you have a sub menu like Character Design */
     subMenu: [
       {
         path: `${thumbnail}nectarmancer-242x300.jpg`,
+        routeName: 'Fantasy',
         route: '/fantasy',
         subImages: [
           {
@@ -109,6 +110,7 @@ module.exports = [
       },
       {
         path: `${thumbnail}corgi-300x300`,
+        routeName: 'Critters',
         route: '/critters',
         subImages: [
           {
@@ -155,6 +157,7 @@ module.exports = [
       },
       {
         path: `${thumbnail}badaliMermaid_sfw-233x300`,
+        routeName: 'Mermaids',
         route: '/mermaids',
         subImages: [
           {
@@ -212,7 +215,7 @@ module.exports = [
     ],
   },
   {
-    // The Wonderful World of Corporate Synergy
+    routeName: 'The Wonderful World of Corporate Synergy',
     route: '/wwocs',
     images: [
       {
@@ -268,7 +271,7 @@ module.exports = [
     ],
   },
   {
-    // Holiday Art
+    routeName: 'Holiday Art',
     route: '/holiday',
     images: [
       {
@@ -294,7 +297,7 @@ module.exports = [
     ],
   },
   {
-    // Commissions
+    routeName: 'Commissions',
     route: '/commissions',
     images: [
       {
@@ -330,7 +333,7 @@ module.exports = [
     ],
   },
   {
-    // Games
+    routeName: 'Games',
     route: '/games',
     images: [
       /* Follow this pattern if the page has sub headings like Games  */
@@ -452,7 +455,7 @@ module.exports = [
     ],
   },
   {
-    name: 'Book Credits',
+    routeName: 'Book Credits',
     route: '/books',
     images: [
       {
@@ -511,5 +514,9 @@ module.exports = [
         ],
       },
     ],
+  },
+  {
+    routeName: 'Contact',
+    route: '/contact',
   },
 ];

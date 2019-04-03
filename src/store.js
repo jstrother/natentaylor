@@ -5,13 +5,16 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    route: '/',
     routeName: 'Illustration',
   },
   mutations: {
-    updateRoute(state, payload) {
-      state.route = payload.route;
-      state.routeName = payload.routeName;
+    updateRoute(state, routeName) {
+      state.routeName = routeName;
+    },
+  },
+  actions: {
+    setRoute({ commit }, routeName) {
+      commit('updatedRoute', routeName);
     },
   },
 });

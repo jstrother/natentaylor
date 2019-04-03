@@ -6,34 +6,31 @@
       <i class="fas fa-arrow-alt-circle-up icon" :class="{ hidden: showMenu }"></i>
     </div>
     <div class="openMenu" :class="{ hidden: showMenu }">
-      <div v-for="(menuItem, index) in menuItemData" :key="index" class="menuItem">
-        <SubMenu v-if="menuItem.subMenu" :menu-item="menuItem" />
+      <div v-for="(imageItem, index) in imageData" :key="index" class="menuItem">
+        <SubMenu v-if="imageItem.subMenu" :menu-item="imageItem" />
         <router-link
           class="routerLink"
           active-class="active"
           v-else
-          :to="menuItem.route"
-          @click="updateRoute(menuItem)"
+          :to="imageItem.route"
+          @click="updateRoute(imageItem.routeName)"
           exact
+          >{{ imageItem.routeName }}</router-link
         >
-          {{ menuItem.routeName }}
-        </router-link>
       </div>
       <a
         href="https://worldbuildersmarket.com/collections/nate-taylor"
         target="_blank"
         class="routerLink"
+        >Store</a
       >
-        Store
-      </a>
     </div>
   </nav>
 </template>
 
 <script>
-import { mapMutations } from 'vuex';
 import SubMenu from './subMenu.vue';
-import menuItemData from '../assets/dataFiles/menuItemData.js';
+import imageData from '../../public/imageData.js';
 
 export default {
   components: {
@@ -41,12 +38,14 @@ export default {
   },
   data: function() {
     return {
-      menuItemData,
+      imageData,
       showMenu: false,
     };
   },
   methods: {
-    ...mapMutations(['updateRoute']),
+    updateRoute: function(routeName) {
+      this.$store.dispatch('setRoute', routeName);
+    },
     toggleMenu: function() {
       this.showMenu = !this.showMenu;
     },
