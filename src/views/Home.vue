@@ -1,9 +1,21 @@
 <template>
-  <div></div>
+  <div>
+    <Header />
+    <!-- <Main /> -->
+    <!-- <Footer /> -->
+  </div>
 </template>
 
 <script>
-export default {};
+import Header from '../components/Header.vue';
+// import Main from '../components/Main.vue';
+// import Footer from '../components/Footer.vue';
+
+export default {
+  components: {
+    Header,
+  },
+};
 </script>
 
 <style scoped lang="scss"></style>
