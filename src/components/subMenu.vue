@@ -5,7 +5,7 @@
         class="routerLink titleName"
         active-class="active"
         :to="imageItem.route"
-        @click="updateRoute(imageItem)"
+        @click="updateRoute(imageItem.routeName)"
         exact
         >{{ imageItem.routeName }}</router-link
       >
@@ -43,7 +43,7 @@ const subMenuHidden = true;
 
 export default {
   props: {
-    'menu-item': Object,
+    'image-item': Object,
   },
   data: function() {
     return {

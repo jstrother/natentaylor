@@ -7,16 +7,12 @@
     </div>
     <div class="openMenu" :class="{ hidden: showMenu }">
       <div v-for="(imageItem, index) in imageData" :key="index" class="menuItem">
-        <SubMenu v-if="imageItem.subMenu" :menu-item="imageItem" />
-        <router-link
-          class="routerLink"
-          active-class="active"
-          v-else
-          :to="imageItem.route"
-          @click="updateRoute(imageItem.routeName)"
-          exact
-          >{{ imageItem.routeName }}</router-link
-        >
+        <SubMenu v-if="imageItem.subMenu" :image-item="imageItem" />
+        <router-link class="routerLink" active-class="active" v-else :to="imageItem.route" exact>
+          <span @click="updateRoute(imageItem.routeName)">
+            {{ imageItem.routeName }}
+          </span>
+        </router-link>
       </div>
       <a
         href="https://worldbuildersmarket.com/collections/nate-taylor"
@@ -44,6 +40,7 @@ export default {
   },
   methods: {
     updateRoute: function(routeName) {
+      console.log('updateRoute');
       this.$store.dispatch('setRoute', routeName);
     },
     toggleMenu: function() {

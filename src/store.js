@@ -14,7 +14,8 @@ export default new Vuex.Store({
   },
   actions: {
     setRoute({ commit }, routeName) {
-      commit('updatedRoute', routeName);
+      console.log('setRoute');
+      commit('updateRoute', routeName);
     },
   },
 });
