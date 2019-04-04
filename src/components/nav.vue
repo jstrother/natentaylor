@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import SubMenu from './subMenu.vue';
+import SubMenu from './SubMenu.vue';
 import imageData from '../../public/imageData.js';
 
 export default {
