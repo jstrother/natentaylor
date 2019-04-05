@@ -18,7 +18,7 @@
       ></i>
     </div>
     <div
-      class="subMenu"
+      class="subMenuItem"
       :class="{ hidden: showSubMenu }"
       v-for="(subMenuItem, index) in imageItem.subMenu"
       :key="index"
@@ -61,16 +61,18 @@ export default {
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
+    margin-bottom: 0.5em;
 
     .titleName {
       padding-right: $dropDownPadding;
     }
   }
 
-  .subMenu {
+  .subMenuItem {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
+    margin-bottom: 0.5em;
   }
 
   .routerLink {

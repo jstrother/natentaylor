@@ -22,12 +22,14 @@
           </span>
         </router-link>
       </div>
-      <a
-        href="https://worldbuildersmarket.com/collections/nate-taylor"
-        target="_blank"
-        class="routerLink"
-        >Store</a
-      >
+      <div class="menuItem">
+        <a
+          href="https://worldbuildersmarket.com/collections/nate-taylor"
+          target="_blank"
+          class="routerLink"
+          >Store</a
+        >
+      </div>
     </div>
   </nav>
 </template>
@@ -84,7 +86,8 @@ nav {
   }
 
   .menuItem {
-    margin: 0.5em;
+    margin-bottom: 0.5em;
+    width: 100%;
   }
 
   .routerLink {
