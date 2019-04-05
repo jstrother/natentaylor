@@ -1,4 +1,4 @@
-const scss = './src/scss/';
+const scss = '@/scss/';
 
 module.exports = {
   css: {

@@ -1,61 +1,53 @@
 <template>
   <div class="subMenuCatcher">
     <div class="subMenuTitle">
-      <router-link
-        class="routerLink titleName"
-        active-class="active"
-        :to="imageItem.route"
-        @click="updateRoute(imageItem.routeName)"
-        exact
-        >{{ imageItem.routeName }}</router-link
-      >
+      <router-link class="routerLink titleName" active-class="active" :to="imageItem.route" exact>
+        <span @click="updateRoute(imageItem.routeName)">
+          {{ imageItem.routeName }}
+        </span>
+      </router-link>
       <i
         class="fas fa-arrow-alt-circle-down icon"
-        :class="{ hidden: !subMenuHidden }"
-        @click="subMenuToggle"
+        :class="{ hidden: !showSubMenu }"
+        @click="toggleSubMenu"
       ></i>
       <i
         class="fas fa-arrow-alt-circle-up icon"
-        :class="{ hidden: subMenuHidden }"
-        @click="subMenuToggle"
+        :class="{ hidden: showSubMenu }"
+        @click="toggleSubMenu"
       ></i>
     </div>
     <div
       class="subMenu"
-      :class="{ hidden: subMenuHidden }"
+      :class="{ hidden: showSubMenu }"
       v-for="(subMenuItem, index) in imageItem.subMenu"
       :key="index"
     >
-      <router-link
-        class="routerLink"
-        active-class="active"
-        :to="subMenuItem.route"
-        @click="updateRoute(imageItem.routeName)"
-        exact
-        >{{ subMenuItem.routeName }}</router-link
-      >
+      <router-link class="routerLink" active-class="active" :to="subMenuItem.route" exact>
+        <span @click="updateRoute(subMenuItem.routeName)">
+          {{ subMenuItem.routeName }}
+        </span>
+      </router-link>
     </div>
   </div>
 </template>
 
 <script>
-const subMenuHidden = true;
-
 export default {
   props: {
     'image-item': Object,
   },
-  data: function() {
-    return {
-      subMenuHidden,
-    };
-  },
   methods: {
     updateRoute: function(routeName) {
-      this.$store.dispatch('setRoute', routeName);
+      this.$store.commit('updateRoute', routeName);
     },
-    subMenuToggle: function() {
-      this.subMenuHidden = !this.subMenuHidden;
+    toggleSubMenu: function() {
+      this.$store.commit('showSubMenu');
+    },
+  },
+  computed: {
+    showSubMenu: function() {
+      return this.$store.getters.getSubMenuStatus;
     },
   },
 };

@@ -6,16 +6,26 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     routeName: 'Illustration',
+    menuHidden: true,
+    subMenuHidden: true,
+  },
+  getters: {
+    getMenuStatus(state) {
+      return state.menuHidden;
+    },
+    getSubMenuStatus(state) {
+      return state.subMenuHidden;
+    },
   },
   mutations: {
     updateRoute(state, routeName) {
       state.routeName = routeName;
     },
-  },
-  actions: {
-    setRoute({ commit }, routeName) {
-      console.log('setRoute');
-      commit('updateRoute', routeName);
+    showMenu(state) {
+      state.menuHidden = !state.menuHidden;
+    },
+    showSubMenu(state) {
+      state.subMenuHidden = !state.subMenuHidden;
     },
   },
 });

@@ -1,9 +1,17 @@
 <template>
   <nav>
-    <div class="menuToggle" @click="toggleMenu">
+    <div class="menuToggle">
       <p>Menu</p>
-      <i class="fas fa-arrow-alt-circle-down icon" :class="{ hidden: !showMenu }"></i>
-      <i class="fas fa-arrow-alt-circle-up icon" :class="{ hidden: showMenu }"></i>
+      <i
+        class="fas fa-arrow-alt-circle-down icon"
+        :class="{ hidden: !showMenu }"
+        @click="toggleMenu"
+      ></i>
+      <i
+        class="fas fa-arrow-alt-circle-up icon"
+        :class="{ hidden: showMenu }"
+        @click="toggleMenu"
+      ></i>
     </div>
     <div class="openMenu" :class="{ hidden: showMenu }">
       <div v-for="(imageItem, index) in imageData" :key="index" class="menuItem">
@@ -26,7 +34,7 @@
 
 <script>
 import SubMenu from './SubMenu.vue';
-import imageData from '../../public/imageData.js';
+import imageData from '../../public/imageData';
 
 export default {
   components: {
@@ -35,16 +43,19 @@ export default {
   data: function() {
     return {
       imageData,
-      showMenu: false,
     };
   },
   methods: {
     updateRoute: function(routeName) {
-      console.log('updateRoute');
-      this.$store.dispatch('setRoute', routeName);
+      this.$store.commit('setRoute', routeName);
     },
     toggleMenu: function() {
-      this.showMenu = !this.showMenu;
+      this.$store.commit('showMenu');
+    },
+  },
+  computed: {
+    showMenu: function() {
+      return this.$store.getters.getMenuStatus;
     },
   },
 };
