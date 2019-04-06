@@ -8,6 +8,9 @@
           <img :src="image.thumbnail" :alt="image.name" />
         </div>
       </div>
+      <div v-else-if="imageItem.name === 'Contact'" class="contact">
+        <Contact />
+      </div>
     </div>
   </main>
 </template>
