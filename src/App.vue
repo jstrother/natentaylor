@@ -16,6 +16,10 @@ export default {
 
 <style scoped lang="scss">
 .app {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
   height: 100%;
   width: 100%;
   display: flex;

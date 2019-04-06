@@ -1,11 +1,13 @@
 <template>
   <div class="subMenuCatcher">
     <div class="subMenuTitle">
-      <router-link class="routerLink titleName" active-class="active" :to="imageItem.route" exact>
-        <span @click="updateRoute(imageItem.routeName)">
-          {{ imageItem.routeName }}
-        </span>
-      </router-link>
+      <div
+        class="routerLink titleName"
+        :class="{ active: imageItem.routeName === route }"
+        @click="updateRoute(imageItem.routeName)"
+      >
+        {{ imageItem.routeName }}
+      </div>
       <i
         class="fas fa-arrow-alt-circle-down icon"
         :class="{ hidden: !showSubMenu }"
@@ -23,11 +25,13 @@
       v-for="(subMenuItem, index) in imageItem.subMenu"
       :key="index"
     >
-      <router-link class="routerLink" active-class="active" :to="subMenuItem.route" exact>
-        <span @click="updateRoute(subMenuItem.routeName)">
-          {{ subMenuItem.routeName }}
-        </span>
-      </router-link>
+      <div
+        class="routerLink"
+        :class="{ active: subMenuItem.routeName === route }"
+        @click="updateRoute(subMenuItem.routeName)"
+      >
+        {{ subMenuItem.routeName }}
+      </div>
     </div>
   </div>
 </template>
@@ -48,6 +52,9 @@ export default {
   computed: {
     showSubMenu: function() {
       return this.$store.getters.getSubMenuStatus;
+    },
+    route() {
+      return this.$store.state.routeName;
     },
   },
 };
@@ -77,7 +84,7 @@ export default {
 
   .routerLink {
     text-decoration: none;
-    color: $routerLinkColor;
+    color: $textColor;
   }
 
   .active {
@@ -85,7 +92,7 @@ export default {
   }
 
   .icon {
-    color: $routerLinkColor;
+    color: $textColor;
   }
 
   .hidden {

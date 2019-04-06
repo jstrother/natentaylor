@@ -26,6 +26,7 @@ header {
   margin: auto;
 
   .banner {
+    align-self: center;
     width: 100%;
     margin: 0;
   }
