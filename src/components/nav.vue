@@ -13,19 +13,23 @@
         @click="toggleMenu"
       ></i>
     </div>
-    <div class="openMenu" :class="{ hidden: showMenu }">
+    <div
+      id="openMenu"
+      class="openMenu"
+      :class="[subMenu ? subMenuClosed : subMenuOpen, { hidden: showMenu }]"
+    >
       <div v-for="(imageItem, index) in imageData" :key="index" class="menuItem">
         <SubMenu v-if="imageItem.subMenu" :image-item="imageItem" />
         <div
           v-else
           class="routerLink"
           :class="{ active: imageItem.routeName === route }"
-          @click="updateRoute(imageItem.routeName)"
+          @click="menuItemSelect(imageItem.routeName)"
         >
           {{ imageItem.routeName }}
         </div>
       </div>
-      <div class="menuItem">
+      <div class="menuItem" @click="storeClicked">
         <a
           href="https://worldbuildersmarket.com/collections/nate-taylor"
           target="_blank"
@@ -39,28 +43,36 @@
 
 <script>
 import SubMenu from './SubMenu.vue';
-import imageData from '../../public/imageData';
+import imageData from '../assets/imageData';
 
 export default {
   components: {
     SubMenu,
   },
-  data: function() {
+  data() {
     return {
       imageData,
+      subMenuClosed: 'subMenuClosed',
+      subMenuOpen: 'subMenuOpen',
     };
   },
   methods: {
-    updateRoute: function(routeName) {
-      this.$store.commit('updateRoute', routeName);
+    menuItemSelect(routeName) {
+      this.$store.commit('menuItemSelect', routeName);
     },
-    toggleMenu: function() {
+    toggleMenu() {
       this.$store.commit('showMenu');
+    },
+    storeClicked() {
+      this.$store.dispatch('storeClicked');
     },
   },
   computed: {
-    showMenu: function() {
+    showMenu() {
       return this.$store.getters.getMenuStatus;
+    },
+    subMenu() {
+      return this.$store.state.subMenuHidden;
     },
     route() {
       return this.$store.state.routeName;
@@ -75,7 +87,6 @@ nav {
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  font-family: 'FiraSansRegular', sans-serif;
   font-size: 1.25em;
   margin: auto;
   max-width: 66%;
@@ -117,6 +128,16 @@ nav {
         color: $activeColor;
       }
     }
+  }
+
+  .subMenuOpen {
+    margin-top: 12.55em;
+    // this is to help the top of the menu appear in the same place
+    // depending upon whether the subMenu is open or closed
+  }
+
+  .subMenuClosed {
+    margin-top: 10em;
   }
 
   .hidden {

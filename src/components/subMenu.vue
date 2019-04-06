@@ -4,7 +4,7 @@
       <div
         class="routerLink titleName"
         :class="{ active: imageItem.routeName === route }"
-        @click="updateRoute(imageItem.routeName)"
+        @click="menuItemSelect(imageItem.routeName)"
       >
         {{ imageItem.routeName }}
       </div>
@@ -28,7 +28,7 @@
       <div
         class="routerLink"
         :class="{ active: subMenuItem.routeName === route }"
-        @click="updateRoute(subMenuItem.routeName)"
+        @click="menuItemSelect(subMenuItem.routeName)"
       >
         {{ subMenuItem.routeName }}
       </div>
@@ -42,8 +42,8 @@ export default {
     'image-item': Object,
   },
   methods: {
-    updateRoute: function(routeName) {
-      this.$store.commit('updateRoute', routeName);
+    menuItemSelect: function(routeName) {
+      this.$store.commit('menuItemSelect', routeName);
     },
     toggleSubMenu: function() {
       this.$store.commit('showSubMenu');
@@ -85,6 +85,7 @@ export default {
   .routerLink {
     text-decoration: none;
     color: $textColor;
+    cursor: pointer;
   }
 
   .active {
