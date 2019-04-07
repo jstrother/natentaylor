@@ -39,7 +39,7 @@
 <script>
 export default {
   props: {
-    'image-item': Object,
+    imageItem: Object,
   },
   methods: {
     menuItemSelect: function(routeName) {

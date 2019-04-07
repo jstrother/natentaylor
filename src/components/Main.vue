@@ -2,7 +2,10 @@
   <main>
     <h1>{{ title }}</h1>
     <div v-for="(dataItem, index) in imageData" :key="index" class="imagesDisplay">
-      <div v-if="title === dataItem.routeName" class="images">
+      <div v-if="dataItem.subMenu">
+        <Section :dataItem="dataItem.subMenu" />
+      </div>
+      <div v-else-if="title === dataItem.routeName" class="images">
         <div v-for="(image, index) in dataItem.images" :key="index" class="image">
           <Modal v-if="image.name === fullsizeName" :class="{ hidden: modalShow }" />
           <img
@@ -22,12 +25,14 @@
 
 <script>
 import Modal from './Modal.vue';
+import Section from './Section.vue';
 // import Contact from './Contact.vue';
 import imageData from '../assets/imageData';
 
 export default {
   components: {
     Modal,
+    Section,
     // Contact,
   },
   data: function() {

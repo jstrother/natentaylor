@@ -19,7 +19,7 @@
       :class="[subMenu ? subMenuClosed : subMenuOpen, { hidden: showMenu }]"
     >
       <div v-for="(imageItem, index) in imageData" :key="index" class="menuItem">
-        <SubMenu v-if="imageItem.subMenu" :image-item="imageItem" />
+        <SubMenu v-if="imageItem.subMenu" :imageItem="imageItem" />
         <div
           v-else
           class="routerLink"
