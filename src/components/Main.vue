@@ -3,7 +3,7 @@
     <h1>{{ title }}</h1>
     <div v-for="(dataItem, index) in imageData" :key="index" class="imagesDisplay">
       <div v-if="dataItem.subMenu">
-        <Section :dataItem="dataItem.subMenu" />
+        <Section :subMenu="dataItem.subMenu" />
       </div>
       <div v-else-if="title === dataItem.routeName" class="images">
         <div v-for="(image, index) in dataItem.images" :key="index" class="image">
@@ -35,14 +35,16 @@ export default {
     Section,
     // Contact,
   },
-  data: function() {
+  data() {
     return {
       imageData,
     };
   },
   methods: {
     getThumbnailURL(thumbnail) {
-      return require(`../assets/images/thumbnails/${thumbnail}`);
+      if (thumbnail !== '') {
+        return require(`../assets/images/thumbnails/${thumbnail}`);
+      }
     },
     showModal(fullsize, name) {
       this.$store.commit('showModal');

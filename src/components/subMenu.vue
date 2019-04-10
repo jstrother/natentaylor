@@ -42,15 +42,15 @@ export default {
     imageItem: Object,
   },
   methods: {
-    menuItemSelect: function(routeName) {
+    menuItemSelect(routeName) {
       this.$store.commit('menuItemSelect', routeName);
     },
-    toggleSubMenu: function() {
+    toggleSubMenu() {
       this.$store.commit('showSubMenu');
     },
   },
   computed: {
-    showSubMenu: function() {
+    showSubMenu() {
       return this.$store.getters.getSubMenuStatus;
     },
     route() {

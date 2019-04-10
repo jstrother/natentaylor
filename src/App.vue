@@ -22,7 +22,7 @@ export default {
   align-items: center;
   font-family: sans-serif;
   height: 100%;
-  width: 100%;
+  max-width: 100%;
   display: flex;
   background-color: $backgroundColor;
 }

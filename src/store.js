@@ -9,6 +9,7 @@ export default new Vuex.Store({
     menuHidden: true,
     subMenuHidden: true,
     modalHidden: true,
+    subSectionHidden: true,
     fullsizeImage: '',
     fullsizeName: '',
   },
@@ -34,6 +35,9 @@ export default new Vuex.Store({
       state.routeName = routeName;
       state.menuHidden = true;
       state.subMenuHidden = true;
+      if (state.routeName === 'Character Design') {
+        state.subSectionHidden = true;
+      }
     },
     showMenu(state) {
       state.menuHidden = !state.menuHidden;
@@ -54,6 +58,9 @@ export default new Vuex.Store({
     },
     fullsizeName(state, payload) {
       state.fullsizeName = payload;
+    },
+    showSubSection(state) {
+      state.subSectionHidden = !state.subSectionHidden;
     },
   },
   actions: {

@@ -1,7 +1,6 @@
 module.exports = [
   {
     routeName: 'Illustration',
-    route: '/',
     images: [
       {
         thumbnail: 'MonstersDames_2018-215x300.jpg',
@@ -27,13 +26,11 @@ module.exports = [
   },
   {
     routeName: 'Character Design',
-    route: '/characterdesign',
     /* Follow this pattern if you have a sub menu like Character Design */
     subMenu: [
       {
         thumbnail: 'nectarmancer-242x300.jpg',
         routeName: 'Fantasy',
-        route: '/fantasy',
         subImages: [
           {
             thumbnail: 'animalGirl_redux2-1-258x300.jpg',
@@ -98,9 +95,8 @@ module.exports = [
         ],
       },
       {
-        thumbnail: 'corgi-300x300',
+        thumbnail: 'corgi-300x300.jpg',
         routeName: 'Critters',
-        route: '/critters',
         subImages: [
           {
             thumbnail: 'corgi-300x300.jpg',
@@ -145,9 +141,8 @@ module.exports = [
         ],
       },
       {
-        path: 'badaliMermaid_sfw-233x300',
+        thumbnail: 'badaliMermaid_sfw-233x300.jpg',
         routeName: 'Mermaids',
-        route: '/mermaids',
         subImages: [
           {
             thumbnail: 'badaliMermaid_sfw-233x300.jpg',
@@ -205,7 +200,6 @@ module.exports = [
   },
   {
     routeName: 'The Wonderful World of Corporate Synergy',
-    route: '/wwocs',
     images: [
       {
         thumbnail: 'HookVader-small-1-300x200.jpg',
@@ -261,7 +255,6 @@ module.exports = [
   },
   {
     routeName: 'Holiday Art',
-    route: '/holiday',
     images: [
       {
         thumbnail: 'Santa-300x300.jpg',
@@ -287,7 +280,6 @@ module.exports = [
   },
   {
     routeName: 'Commissions',
-    route: '/commissions',
     images: [
       {
         thumbnail: 'SleepyHollow-1-1-300x300.jpg',
@@ -323,7 +315,6 @@ module.exports = [
   },
   {
     routeName: 'Games',
-    route: '/games',
     images: [
       /* Follow this pattern if the page has sub headings like Games  */
       {
@@ -445,7 +436,6 @@ module.exports = [
   },
   {
     routeName: 'Book Credits',
-    route: '/books',
     images: [
       {
         subHeading: 'Cover & Interiors',
@@ -506,6 +496,5 @@ module.exports = [
   },
   {
     routeName: 'Contact',
-    route: '/contact',
   },
 ];
