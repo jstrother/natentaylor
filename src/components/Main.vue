@@ -1,12 +1,15 @@
 <template>
   <main>
     <h1>{{ title }}</h1>
-    <div v-for="(dataItem, index) in imageData" :key="index" class="imagesDisplay">
-      <div v-if="dataItem.subMenu">
-        <Section :subMenu="dataItem.subMenu" />
+    <div v-for="(dataItem, index) in imageData" :key="index" class="display">
+      <div v-if="compareRouteName(dataItem.routeName)" class="contact">
+        <!-- <Contact /> -->
       </div>
-      <div v-else-if="title === dataItem.routeName" class="images">
-        <div v-for="(image, index) in dataItem.images" :key="index" class="image">
+      <div v-else-if="dataItem.images[0].subHeading">
+        hello
+      </div>
+      <div v-else class="images">
+        <div v-for="(image, index) in dataItem.images" :key="index" class="images">
           <Modal v-if="image.name === fullsizeName" :class="{ hidden: modalShow }" />
           <img
             :class="{ hidden: !modalShow }"
@@ -16,23 +19,18 @@
           />
         </div>
       </div>
-      <div v-else-if="dataItem.name === 'Contact'" class="contact">
-        <!-- <Contact /> -->
-      </div>
     </div>
   </main>
 </template>
 
 <script>
 import Modal from './Modal.vue';
-import Section from './Section.vue';
 // import Contact from './Contact.vue';
 import imageData from '../assets/imageData';
 
 export default {
   components: {
     Modal,
-    Section,
     // Contact,
   },
   data() {
@@ -50,6 +48,11 @@ export default {
       this.$store.commit('showModal');
       this.$store.commit('fullsizeImage', fullsize);
       this.$store.commit('fullsizeName', name);
+    },
+    compareRouteName(routeName) {
+      console.log(this.title);
+      console.log(routeName);
+      return routeName === this.title;
     },
   },
   computed: {
@@ -71,6 +74,9 @@ export default {
 
 <style scoped lang="scss">
 main {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
   color: $textColor;
   text-align: center;
 

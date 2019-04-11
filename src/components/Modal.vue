@@ -33,16 +33,24 @@ export default {
 
 <style scoped lang="scss">
 .modal {
+  margin: auto;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
   background-color: $backgroundColor;
   color: $textColor;
   text-align: center;
   z-index: 9999999;
+  max-width: 85%;
+
+  img {
+    max-width: 95%;
+  }
 
   .closeModal {
-    padding: 0.5em;
+    align-self: center;
     cursor: pointer;
-    position: relative;
-    left: 30em;
   }
 }
 </style>

@@ -25,176 +25,167 @@ module.exports = [
     ],
   },
   {
-    routeName: 'Character Design',
-    /* Follow this pattern if you have a sub menu like Character Design */
-    subMenu: [
+    routeName: 'Fantasy',
+    images: [
+      {
+        thumbnail: 'animalGirl_redux2-1-258x300.jpg',
+        fullsize: 'animalGirl_redux2-1.jpg',
+        name: 'animalGirl_redux2-1',
+      },
+      {
+        thumbnail: 'hag-240x300.jpg',
+        fullsize: 'hag.jpg',
+        name: 'hag',
+      },
       {
         thumbnail: 'nectarmancer-242x300.jpg',
-        routeName: 'Fantasy',
-        subImages: [
-          {
-            thumbnail: 'animalGirl_redux2-1-258x300.jpg',
-            fullsize: 'animalGirl_redux2-1.jpg',
-            name: 'animalGirl_redux2-1',
-          },
-          {
-            thumbnail: 'hag-240x300.jpg',
-            fullsize: 'hag.jpg',
-            name: 'hag',
-          },
-          {
-            thumbnail: 'nectarmancer-242x300.jpg',
-            fullsize: 'nectarmancer.jpg',
-            name: 'nectarmancer',
-          },
-          {
-            thumbnail: 'goblin-determination-300x194.jpg',
-            fullsize: 'goblin-determination.jpg',
-            name: 'goblin-determination',
-          },
-          {
-            thumbnail: 'goblinRefined-249x300.jpg',
-            fullsize: 'goblinRefined.jpg',
-            name: 'goblinRefined',
-          },
-          {
-            thumbnail: 'leprechaun2018-264x300.jpg',
-            fullsize: 'leprechaun2018.jpg',
-            name: 'leprechaun2018',
-          },
-          {
-            thumbnail: 'DnDlineup-300x82.jpg',
-            fullsize: 'DnDlineup.jpg',
-            name: 'DnDlineup',
-          },
-          {
-            thumbnail: 'woodstockCloud-235x300.jpg',
-            fullsize: 'woodstockCloud.jpg',
-            name: 'woodstockCloud',
-          },
-          {
-            thumbnail: 'barbarianPaladin-240x300.jpg',
-            fullsize: 'barbarianPaladin.jpg',
-            name: 'barbarianPaladin',
-          },
-          {
-            thumbnail: '${pathway}assassin-285x300.jpg',
-            fullsize: 'assassin.jpg',
-            name: 'assassin',
-          },
-          {
-            thumbnail: 'anneBonny-224x300.jpg',
-            fullsize: 'anneBonny.jpg',
-            name: 'anneBonny',
-          },
-          {
-            thumbnail: 'arcticFox-1-300x300.jpg',
-            fullsize: 'arcticFox-1.jpg',
-            name: 'arcticFox-1',
-          },
-        ],
+        fullsize: 'nectarmancer.jpg',
+        name: 'nectarmancer',
       },
+      {
+        thumbnail: 'goblin-determination-300x194.jpg',
+        fullsize: 'goblin-determination.jpg',
+        name: 'goblin-determination',
+      },
+      {
+        thumbnail: 'goblinRefined-249x300.jpg',
+        fullsize: 'goblinRefined.jpg',
+        name: 'goblinRefined',
+      },
+      {
+        thumbnail: 'leprechaun2018-264x300.jpg',
+        fullsize: 'leprechaun2018.jpg',
+        name: 'leprechaun2018',
+      },
+      {
+        thumbnail: 'DnDlineup-300x82.jpg',
+        fullsize: 'DnDlineup.jpg',
+        name: 'DnDlineup',
+      },
+      {
+        thumbnail: 'woodstockCloud-235x300.jpg',
+        fullsize: 'woodstockCloud.jpg',
+        name: 'woodstockCloud',
+      },
+      {
+        thumbnail: 'barbarianPaladin-240x300.jpg',
+        fullsize: 'barbarianPaladin.jpg',
+        name: 'barbarianPaladin',
+      },
+      {
+        thumbnail: 'assassin-285x300.jpg',
+        fullsize: 'assassin.jpg',
+        name: 'assassin',
+      },
+      {
+        thumbnail: 'anneBonny-224x300.jpg',
+        fullsize: 'anneBonny.jpg',
+        name: 'anneBonny',
+      },
+      {
+        thumbnail: 'arcticFox-1-300x300.jpg',
+        fullsize: 'arcticFox-1.jpg',
+        name: 'arcticFox-1',
+      },
+    ],
+  },
+  {
+    routeName: 'Critters',
+    images: [
       {
         thumbnail: 'corgi-300x300.jpg',
-        routeName: 'Critters',
-        subImages: [
-          {
-            thumbnail: 'corgi-300x300.jpg',
-            fullsize: 'corgi.jpg',
-            name: 'corgi',
-          },
-          {
-            thumbnail: '4x6_robopet-300x204.jpg',
-            fullsize: '4x6_robopet.jpg',
-            name: '4x6_robopet',
-          },
-          {
-            thumbnail: 'sherlotter-204x300.jpg',
-            fullsize: 'sherlotter.jpg',
-            name: 'sherlotter',
-          },
-          {
-            thumbnail: 'kermit-300x300.jpg',
-            fullsize: 'kermit.jpg',
-            name: 'kermit',
-          },
-          {
-            thumbnail: 'kalgren2-300x300.jpg',
-            fullsize: 'kalgren2.jpg',
-            name: 'kalgren2',
-          },
-          {
-            thumbnail: 'frogPrince-243x300.jpg',
-            fullsize: 'frogPrince.jpg',
-            name: 'frogPrince',
-          },
-          {
-            thumbnail: 'crashBandicoot-232x300.jpg',
-            fullsize: 'crashBandicoot.jpg',
-            name: 'crashBandicoot',
-          },
-          {
-            thumbnail: 'countCudula-240x300.jpg',
-            fullsize: 'countCudula.jpg',
-            name: 'countCudula',
-          },
-        ],
+        fullsize: 'corgi.jpg',
+        name: 'corgi',
       },
       {
+        thumbnail: '4x6_robopet-300x204.jpg',
+        fullsize: '4x6_robopet.jpg',
+        name: '4x6_robopet',
+      },
+      {
+        thumbnail: 'sherlotter-204x300.jpg',
+        fullsize: 'sherlotter.jpg',
+        name: 'sherlotter',
+      },
+      {
+        thumbnail: 'kermit-300x300.jpg',
+        fullsize: 'kermit.jpg',
+        name: 'kermit',
+      },
+      {
+        thumbnail: 'kalgren2-300x300.jpg',
+        fullsize: 'kalgren2.jpg',
+        name: 'kalgren2',
+      },
+      {
+        thumbnail: 'frogPrince-243x300.jpg',
+        fullsize: 'frogPrince.jpg',
+        name: 'frogPrince',
+      },
+      {
+        thumbnail: 'crashBandicoot-232x300.jpg',
+        fullsize: 'crashBandicoot.jpg',
+        name: 'crashBandicoot',
+      },
+      {
+        thumbnail: 'countCudula-240x300.jpg',
+        fullsize: 'countCudula.jpg',
+        name: 'countCudula',
+      },
+    ],
+  },
+  {
+    routeName: 'Mermaids',
+    images: [
+      {
         thumbnail: 'badaliMermaid_sfw-233x300.jpg',
-        routeName: 'Mermaids',
-        subImages: [
-          {
-            thumbnail: 'badaliMermaid_sfw-233x300.jpg',
-            fullsize: 'badaliMermaid_sfw.jpg',
-            name: 'badaliMermaid_sfw',
-          },
-          {
-            thumbnail: 'sealMermaid-300x300.jpg',
-            fullsize: 'sealMermaid.jpg',
-            name: 'sealMermaid',
-          },
-          {
-            thumbnail: 'milkmermaid-281x300.jpg',
-            fullsize: 'milkmermaid.jpg',
-            name: 'milkmermaid',
-          },
-          {
-            thumbnail: 'mertlemaid-300x240.jpg',
-            fullsize: 'mertlemaid.jpg',
-            name: 'mertlemaid',
-          },
-          {
-            thumbnail: 'mermayThe4th-232x300.jpg',
-            fullsize: 'mermayThe4th.jpg',
-            name: 'mermayThe4th',
-          },
-          {
-            thumbnail: 'mermay20-232x300.jpg',
-            fullsize: 'mermay20.jpg',
-            name: 'mermay20',
-          },
-          {
-            thumbnail: 'Mermay3-232x300.jpg',
-            fullsize: 'Mermay3.jpg',
-            name: 'Mermay3',
-          },
-          {
-            thumbnail: 'mermay2-232x300.jpg',
-            fullsize: 'mermay2.jpg',
-            name: 'mermay2',
-          },
-          {
-            thumbnail: '${pathway}mermaidBoba-240x300.jpg',
-            fullsize: 'mermaidBoba.jpg',
-            name: 'mermaidBoba',
-          },
-          {
-            thumbnail: 'mermaidAngry-240x300.jpg',
-            fullsize: 'mermaidAngry.jpg',
-            name: 'mermaidAngry',
-          },
-        ],
+        fullsize: 'badaliMermaid_sfw.jpg',
+        name: 'badaliMermaid_sfw',
+      },
+      {
+        thumbnail: 'sealMermaid-300x300.jpg',
+        fullsize: 'sealMermaid.jpg',
+        name: 'sealMermaid',
+      },
+      {
+        thumbnail: 'milkmermaid-281x300.jpg',
+        fullsize: 'milkmermaid.jpg',
+        name: 'milkmermaid',
+      },
+      {
+        thumbnail: 'mertlemaid-300x240.jpg',
+        fullsize: 'mertlemaid.jpg',
+        name: 'mertlemaid',
+      },
+      {
+        thumbnail: 'mermayThe4th-232x300.jpg',
+        fullsize: 'mermayThe4th.jpg',
+        name: 'mermayThe4th',
+      },
+      {
+        thumbnail: 'mermay20-232x300.jpg',
+        fullsize: 'mermay20.jpg',
+        name: 'mermay20',
+      },
+      {
+        thumbnail: 'Mermay3-232x300.jpg',
+        fullsize: 'Mermay3.jpg',
+        name: 'Mermay3',
+      },
+      {
+        thumbnail: 'mermay2-232x300.jpg',
+        fullsize: 'mermay2.jpg',
+        name: 'mermay2',
+      },
+      {
+        thumbnail: 'mermaidBoba-240x300.jpg',
+        fullsize: 'mermaidBoba.jpg',
+        name: 'mermaidBoba',
+      },
+      {
+        thumbnail: 'mermaidAngry-240x300.jpg',
+        fullsize: 'mermaidAngry.jpg',
+        name: 'mermaidAngry',
       },
     ],
   },

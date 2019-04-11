@@ -1,7 +1,7 @@
 <template>
   <nav>
     <div class="menuToggle">
-      <p>Menu</p>
+      <p @click="toggleMenu">Menu</p>
       <i
         class="fas fa-arrow-alt-circle-down icon"
         :class="{ hidden: !showMenu }"
@@ -13,15 +13,9 @@
         @click="toggleMenu"
       ></i>
     </div>
-    <div
-      id="openMenu"
-      class="openMenu"
-      :class="[subMenu ? subMenuClosed : subMenuOpen, { hidden: showMenu }]"
-    >
+    <div id="openMenu" class="openMenu">
       <div v-for="(imageItem, index) in imageData" :key="index" class="menuItem">
-        <SubMenu v-if="imageItem.subMenu" :imageItem="imageItem" />
         <div
-          v-else
           class="routerLink"
           :class="{ active: imageItem.routeName === route }"
           @click="menuItemSelect(imageItem.routeName)"
@@ -42,13 +36,9 @@
 </template>
 
 <script>
-import SubMenu from './SubMenu.vue';
 import imageData from '../assets/imageData';
 
 export default {
-  components: {
-    SubMenu,
-  },
   data() {
     return {
       imageData,
@@ -64,7 +54,7 @@ export default {
       this.$store.commit('showMenu');
     },
     storeClicked() {
-      this.$store.dispatch('storeClicked');
+      this.$store.commit('storeClicked');
     },
   },
   computed: {
@@ -102,6 +92,7 @@ nav {
     color: $textColor;
 
     p {
+      cursor: pointer;
       padding-right: $dropDownPadding;
     }
   }
