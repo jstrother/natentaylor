@@ -305,9 +305,9 @@ module.exports = [
     ],
   },
   {
+    /* Follow this pattern if the page has sub headings like Games  */
     routeName: 'Games',
     images: [
-      /* Follow this pattern if the page has sub headings like Games  */
       {
         subHeading: 'Tak',
         subImages: [

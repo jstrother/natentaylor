@@ -13,7 +13,7 @@
         @click="toggleMenu"
       ></i>
     </div>
-    <div id="openMenu" class="openMenu">
+    <div id="openMenu" class="openMenu" :class="{ hidden: showMenu }">
       <div v-for="(imageItem, index) in imageData" :key="index" class="menuItem">
         <div
           class="routerLink"
@@ -98,15 +98,20 @@ nav {
   }
 
   .openMenu {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
     margin: auto;
+    margin-top: 13em;
     background-color: $backgroundColor;
-    padding: 0.25em;
+    padding: 0.6em;
     position: absolute;
     z-index: 1000;
 
     .menuItem {
       margin: 0.5em;
       margin-left: -0.5em;
+      align-self: center;
       width: 100%;
 
       .routerLink {
@@ -119,16 +124,6 @@ nav {
         color: $activeColor;
       }
     }
-  }
-
-  .subMenuOpen {
-    margin-top: 12.55em;
-    // this is to help the top of the menu appear in the same place
-    // depending upon whether the subMenu is open or closed
-  }
-
-  .subMenuClosed {
-    margin-top: 10em;
   }
 
   .hidden {

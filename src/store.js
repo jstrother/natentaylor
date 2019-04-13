@@ -7,7 +7,6 @@ export default new Vuex.Store({
   state: {
     routeName: 'Illustration',
     menuHidden: true,
-    subMenuHidden: true,
     modalHidden: true,
     fullsizeImage: '',
     fullsizeName: '',
@@ -15,9 +14,6 @@ export default new Vuex.Store({
   getters: {
     getMenuStatus(state) {
       return state.menuHidden;
-    },
-    getSubMenuStatus(state) {
-      return state.subMenuHidden;
     },
     getModalStatus(state) {
       return state.modalHidden;
@@ -38,9 +34,6 @@ export default new Vuex.Store({
     },
     showMenu(state) {
       state.menuHidden = !state.menuHidden;
-    },
-    showSubMenu(state) {
-      state.subMenuHidden = !state.subMenuHidden;
     },
     showModal(state) {
       state.modalHidden = !state.modalHidden;

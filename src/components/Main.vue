@@ -5,7 +5,7 @@
       <div v-if="compareRouteName(dataItem.routeName)" class="contact">
         <!-- <Contact /> -->
       </div>
-      <div v-else-if="dataItem.images[0].subHeading">
+      <div v-else-if="hasSubHeading(dataItem.images)">
         hello
       </div>
       <div v-else class="images">
@@ -40,9 +40,7 @@ export default {
   },
   methods: {
     getThumbnailURL(thumbnail) {
-      if (thumbnail !== '') {
-        return require(`../assets/images/thumbnails/${thumbnail}`);
-      }
+      return require(`../assets/images/thumbnails/${thumbnail}`);
     },
     showModal(fullsize, name) {
       this.$store.commit('showModal');
@@ -50,9 +48,10 @@ export default {
       this.$store.commit('fullsizeName', name);
     },
     compareRouteName(routeName) {
-      console.log(this.title);
-      console.log(routeName);
       return routeName === this.title;
+    },
+    hasSubHeading(data) {
+      console.log(data);
     },
   },
   computed: {
