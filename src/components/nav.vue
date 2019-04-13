@@ -49,6 +49,9 @@ export default {
   methods: {
     menuItemSelect(routeName) {
       this.$store.commit('menuItemSelect', routeName);
+      if (routeName === 'Contact') {
+        this.$store.commit('showContactPage');
+      }
     },
     toggleMenu() {
       this.$store.commit('showMenu');
