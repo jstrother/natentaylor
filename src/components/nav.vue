@@ -50,7 +50,10 @@ export default {
     menuItemSelect(routeName) {
       this.$store.commit('menuItemSelect', routeName);
       if (routeName === 'Contact') {
-        this.$store.commit('showContactPage');
+        this.$store.commit('showContactPage', true);
+      }
+      if (routeName !== 'Contact') {
+        this.$store.commit('showContactPage', false);
       }
     },
     toggleMenu() {

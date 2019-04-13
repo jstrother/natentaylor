@@ -1,7 +1,7 @@
 <template>
   <main>
     <h1>{{ title }}</h1>
-    <div class="imagesDisplay" :class="{ hidden: !contactPageHidden }">
+    <div class="imagesDisplay" :class="{ hidden: contactPageHidden }">
       <div v-for="(dataItem, index) in imageData" :key="index" class="display">
         <div v-if="title === dataItem.routeName" class="imageDisplay">
           <div v-for="(image, index) in dataItem.images" :key="index" class="images">
@@ -32,7 +32,7 @@
         </div>
       </div>
     </div>
-    <div class="contact" :class="{ hidden: contactPageHidden }">
+    <div class="contact" :class="{ hidden: !contactPageHidden }">
       <Contact />
     </div>
   </main>
@@ -79,7 +79,7 @@ export default {
       return this.$store.state.modalHidden;
     },
     contactPageHidden() {
-      return this.$store.state.contactPageHidden;
+      return this.$store.state.showContactPage;
     },
   },
 };
