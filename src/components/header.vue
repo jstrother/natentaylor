@@ -2,7 +2,7 @@
   <header>
     <a href="https://www.natentaylor.com">
       <img
-        src="../assets/images/NateTaylor_marketplaceBanner.jpg"
+        src="../../public/images/NateTaylor_marketplaceBanner.jpg"
         alt="Nate Taylor and Art Thereby"
         class="banner"
       />

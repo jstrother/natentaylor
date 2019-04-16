@@ -485,7 +485,4 @@ module.exports = [
       },
     ],
   },
-  {
-    routeName: 'Contact',
-  },
 ];

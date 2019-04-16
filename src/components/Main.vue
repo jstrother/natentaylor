@@ -1,7 +1,7 @@
 <template>
   <main>
     <h1>{{ title }}</h1>
-    <div class="imagesDisplay" :class="{ hidden: contactPageHidden }">
+    <div class="imagesDisplay">
       <div v-for="(dataItem, index) in imageData" :key="index" class="display">
         <div v-if="title === dataItem.routeName" class="imageDisplay">
           <div v-for="(image, index) in dataItem.images" :key="index" class="images">
@@ -20,66 +20,34 @@
               </div>
             </div>
             <div v-else>
-              <Modal v-if="image.name === fullsizeName" :class="{ hidden: modalShow }" />
-              <img
-                :class="{ hidden: !modalShow }"
-                @click="showModal(image.fullsize, image.name)"
-                :src="getThumbnailURL(image.thumbnail)"
-                :alt="image.name"
-              />
+              <ImageDisplay :image="image" />
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="contact" :class="{ hidden: !contactPageHidden }">
-      <Contact />
-    </div>
   </main>
 </template>
 
 <script>
-import Modal from './Modal.vue';
-import Contact from './Contact.vue';
-import imageData from '../assets/imageData';
+import ImageDisplay from './ImageDisplay.vue';
+import imageData from '../../public/imageData';
 
 export default {
   components: {
-    Modal,
-    Contact,
+    ImageDisplay,
   },
   data() {
     return {
       imageData,
     };
   },
-  methods: {
-    getThumbnailURL(thumbnail) {
-      if (thumbnail) {
-        return require(`../assets/images/thumbnails/${thumbnail}`);
-      }
-    },
-    showModal(fullsize, name) {
-      this.$store.commit('showModal');
-      this.$store.commit('fullsizeImage', fullsize);
-      this.$store.commit('fullsizeName', name);
-    },
-  },
   computed: {
     title() {
       return this.$store.state.routeName;
     },
-    fullsizeImage() {
-      return this.$store.state.fullsizeImage;
-    },
-    fullsizeName() {
-      return this.$store.state.fullsizeName;
-    },
     modalShow() {
       return this.$store.state.modalHidden;
-    },
-    contactPageHidden() {
-      return this.$store.state.showContactPage;
     },
   },
 };

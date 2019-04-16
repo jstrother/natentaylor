@@ -10,7 +10,7 @@ export default {
   methods: {
     getFullsizeURL(fullsize) {
       if (fullsize !== '') {
-        return require(`../assets/images/fullsize/${fullsize}`);
+        return require(`../../public/images/fullsize/${fullsize}`);
       }
     },
     showModal() {

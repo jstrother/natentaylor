@@ -8,7 +8,6 @@ export default new Vuex.Store({
     routeName: 'Illustration',
     menuHidden: true,
     modalHidden: true,
-    showContactPage: false,
     fullsizeImage: '',
     fullsizeName: '',
   },
@@ -38,9 +37,6 @@ export default new Vuex.Store({
     },
     showModal(state) {
       state.modalHidden = !state.modalHidden;
-    },
-    showContactPage(state, payload) {
-      state.showContactPage = payload;
     },
     closeModal(state) {
       state.fullsizeImage = '';

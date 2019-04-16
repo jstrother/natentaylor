@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import imageData from '../assets/imageData';
+import imageData from '../../public/imageData';
 
 export default {
   data() {
