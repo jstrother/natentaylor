@@ -23,12 +23,14 @@ export default {
 
 <style scoped lang="scss">
 header {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
   margin: auto;
 
   .banner {
     align-self: center;
-    width: 100%;
-    margin: 0;
+    margin: auto;
   }
 }
 </style>
