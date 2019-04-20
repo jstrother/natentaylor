@@ -1,6 +1,7 @@
 @import 'breakpoints';
 
-$backgroundColor: #000000;
-$textColor: #ffffff;
-$activeColor: #ac9228;
+$backgroundColor: #ffffff;
+$textColor: #000000;
+$activeColor: darken(#ac9228, 5%);
 $dropDownPadding: 0.5em;
+$borderStyle: 1px solid #000000;

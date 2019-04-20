@@ -47,6 +47,7 @@ export default {
 
   img {
     max-width: 95%;
+    border: $borderStyle;
   }
 
   .closeModal {

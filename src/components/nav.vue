@@ -73,9 +73,6 @@ export default {
 
 <style scoped lang="scss">
 nav {
-  * {
-    border: 1px solid red;
-  }
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
@@ -83,7 +80,7 @@ nav {
   align-items: center;
   font-size: 1.25em;
   margin: auto;
-  max-width: 66%;
+  max-width: 100%;
   text-align: center;
 
   .menuToggle {
@@ -104,20 +101,18 @@ nav {
   }
 
   .openMenu {
-    // justify-self: center;
-    // align-self: center;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
-    margin: 14em auto auto;
+    margin: 12em auto auto;
     background-color: $backgroundColor;
     position: absolute;
+    width: 100%;
     z-index: 1000;
 
     .menuItem {
       margin: 0.5em;
       align-self: center;
-      // padding-right: 2em;
       width: 100%;
 
       .link {
@@ -139,9 +134,9 @@ nav {
   @media (min-width: $gtTabletP) {
     font-size: 1em;
 
-    // .menuItem {
-    //   padding-right: 0;
-    // }
+    .openMenu {
+      width: 20%;
+    }
   }
 }
 </style>

@@ -127,6 +127,7 @@ main {
   img {
     cursor: pointer;
     margin: 1em;
+    border: $borderStyle;
   }
 
   .hidden {

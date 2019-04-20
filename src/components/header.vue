@@ -4,7 +4,6 @@
       <img
         src="../../public/images/NateTaylor_marketplaceBanner.jpg"
         alt="Nate Taylor and Art Thereby"
-        class="banner"
       />
     </a>
     <Nav />
@@ -22,9 +21,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-* {
-  border: 1px solid red;
-}
 header {
   display: flex;
   flex-flow: column nowrap;
@@ -33,11 +29,12 @@ header {
   align-items: center;
   margin: auto;
 
-  .banner {
+  img {
     align-self: center;
     margin: auto;
     max-width: 100%;
     height: auto;
+    border: $borderStyle;
   }
 }
 </style>
