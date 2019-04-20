@@ -34,6 +34,7 @@ export default {
 <style scoped lang="scss">
 .modal {
   margin: auto;
+  padding-bottom: 2em;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;

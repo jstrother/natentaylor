@@ -22,15 +22,22 @@ export default {
 </script>
 
 <style scoped lang="scss">
+* {
+  border: 1px solid red;
+}
 header {
   display: flex;
   flex-flow: column nowrap;
+  justify-content: center;
+  align-content: center;
   align-items: center;
   margin: auto;
 
   .banner {
     align-self: center;
     margin: auto;
+    max-width: 100%;
+    height: auto;
   }
 }
 </style>

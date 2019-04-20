@@ -16,7 +16,7 @@
     <div id="openMenu" class="openMenu" :class="{ hidden: showMenu }">
       <div v-for="(imageItem, index) in imageData" :key="index" class="menuItem">
         <div
-          class="routerLink"
+          class="link"
           :class="{ active: imageItem.routeName === route }"
           @click="menuItemSelect(imageItem.routeName)"
         >
@@ -27,7 +27,7 @@
         <a
           href="https://worldbuildersmarket.com/collections/nate-taylor"
           target="_blank"
-          class="routerLink"
+          class="link"
           >Store</a
         >
       </div>
@@ -73,9 +73,13 @@ export default {
 
 <style scoped lang="scss">
 nav {
+  * {
+    border: 1px solid red;
+  }
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
+  align-content: center;
   align-items: center;
   font-size: 1.25em;
   margin: auto;
@@ -87,9 +91,11 @@ nav {
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
+    align-content: center;
     align-items: center;
     text-decoration: none;
     color: $textColor;
+    padding: auto;
 
     p {
       cursor: pointer;
@@ -98,23 +104,23 @@ nav {
   }
 
   .openMenu {
+    // justify-self: center;
+    // align-self: center;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
-    margin: auto;
-    margin-top: 13em;
+    margin: 14em auto auto;
     background-color: $backgroundColor;
-    padding: 0.6em;
     position: absolute;
     z-index: 1000;
 
     .menuItem {
       margin: 0.5em;
-      margin-left: -0.5em;
       align-self: center;
+      // padding-right: 2em;
       width: 100%;
 
-      .routerLink {
+      .link {
         text-decoration: none;
         color: $textColor;
         cursor: pointer;
@@ -132,6 +138,10 @@ nav {
 
   @media (min-width: $gtTabletP) {
     font-size: 1em;
+
+    // .menuItem {
+    //   padding-right: 0;
+    // }
   }
 }
 </style>

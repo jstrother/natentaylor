@@ -5,10 +5,10 @@
       <div v-for="(dataItem, index) in imageData" :key="index" class="display">
         <div v-if="title === dataItem.routeName" class="imageDisplay">
           <div v-for="(image, index) in dataItem.images" :key="index" class="images">
-            <div v-if="image.subHeading">
+            <div v-if="image.subHeading" class="subImagesDisplay">
               <h3 class="subHeading" :class="{ hidden: !modalHidden }">{{ image.subHeading }}</h3>
               <div class="subImageDisplay">
-                <div v-for="(subImage, index) in image.subImages" :key="index" class="subImages">
+                <div v-for="(subImage, index) in image.subImages" :key="index" class="subImage">
                   <Modal v-if="subImage.name === fullsizeName" :class="{ hidden: modalHidden }" />
                   <img
                     :class="{ hidden: !modalHidden }"
@@ -83,27 +83,43 @@ main {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
+  align-items: center;
   color: $textColor;
   text-align: center;
   width: 100%;
 
-  .imageDisplay {
+  .imagesDisplay {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column nowrap;
     justify-content: center;
-    align-content: space-evenly;
+    align-content: center;
+    max-width: 85%;
 
-    .subImageDisplay {
+    .imageDisplay {
       display: flex;
       flex-flow: row wrap;
       justify-content: center;
       align-content: space-evenly;
 
-      .subImages {
+      .subImagesDisplay {
         display: flex;
-        flex-flow: row wrap;
-        justify-content: center;
-        align-content: space-evenly;
+        flex-flow: column nowrap;
+
+        .subImageDisplay {
+          display: flex;
+          flex-flow: row wrap;
+          justify-content: center;
+          align-content: space-evenly;
+          width: 95vw;
+          margin-bottom: 5em;
+
+          .subImage {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            align-content: space-evenly;
+          }
+        }
       }
     }
   }
