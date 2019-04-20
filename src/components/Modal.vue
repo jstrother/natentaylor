@@ -1,6 +1,6 @@
 <template>
   <div class="modal">
-    <div class="closeModal" @click="closeModal">Close</div>
+    <div class="closeModal" @click="closeModal">X</div>
     <img :src="getFullsizeURL(fullsizeImage)" :alt="fullsizeName" />
   </div>
 </template>
@@ -51,8 +51,11 @@ export default {
   }
 
   .closeModal {
-    align-self: center;
+    align-self: flex-end;
+    padding-right: 0.7em;
     cursor: pointer;
+    font-weight: 900;
+    font-size: 1.5em;
   }
 }
 </style>
