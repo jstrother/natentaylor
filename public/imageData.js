@@ -24,6 +24,7 @@ module.exports = [
       },
     ],
   },
+  // end of Illustration
   {
     routeName: 'Fantasy',
     images: [
@@ -89,6 +90,7 @@ module.exports = [
       },
     ],
   },
+  // end of Fantasy
   {
     routeName: 'Critters',
     images: [
@@ -134,6 +136,7 @@ module.exports = [
       },
     ],
   },
+  // end of Critters
   {
     routeName: 'Mermaids',
     images: [
@@ -189,6 +192,7 @@ module.exports = [
       },
     ],
   },
+  // end of Mermaids
   {
     routeName: 'The Wonderful World of Corporate Synergy',
     images: [
@@ -244,6 +248,7 @@ module.exports = [
       },
     ],
   },
+  // end of Corporate Synergy
   {
     routeName: 'Holiday Art',
     images: [
@@ -269,6 +274,7 @@ module.exports = [
       },
     ],
   },
+  // end of Holiday Art
   {
     routeName: 'Commissions',
     images: [
@@ -304,6 +310,7 @@ module.exports = [
       },
     ],
   },
+  // end of Commissions
   /* Follow this pattern if the page has sub headings */
   {
     routeName: 'Games',
@@ -425,6 +432,7 @@ module.exports = [
       },
     ],
   },
+  // end of Games
   {
     routeName: 'Book Credits',
     images: [
@@ -485,4 +493,5 @@ module.exports = [
       },
     ],
   },
+  // end of Book Credits
 ];

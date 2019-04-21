@@ -1,13 +1,13 @@
 <template>
   <main>
     <h1>{{ title }}</h1>
-    <div class="imagesDisplay">
+    <section class="imagesDisplay">
       <div v-for="(dataItem, index) in imageData" :key="index" class="display">
-        <div v-if="title === dataItem.routeName" class="imageDisplay">
+        <section v-if="title === dataItem.routeName" class="imageDisplay">
           <div v-for="(image, index) in dataItem.images" :key="index" class="images">
-            <div v-if="image.subHeading" class="subImagesDisplay">
+            <section v-if="image.subHeading" class="subImagesDisplay">
               <h3 class="subHeading" :class="{ hidden: !modalHidden }">{{ image.subHeading }}</h3>
-              <div class="subImageDisplay">
+              <section class="subImageDisplay">
                 <div v-for="(subImage, index) in image.subImages" :key="index" class="subImage">
                   <Modal v-if="subImage.name === fullsizeName" :class="{ hidden: modalHidden }" />
                   <img
@@ -17,10 +17,10 @@
                     :alt="subImage.name"
                   />
                 </div>
-              </div>
+              </section>
               <br />
-            </div>
-            <div v-else>
+            </section>
+            <section v-else>
               <Modal v-if="image.name === fullsizeName" :class="{ hidden: modalHidden }" />
               <img
                 :class="{ hidden: !modalHidden }"
@@ -28,11 +28,11 @@
                 :src="getThumbnailURL(image.thumbnail)"
                 :alt="image.name"
               />
-            </div>
+            </section>
           </div>
-        </div>
+        </section>
       </div>
-    </div>
+    </section>
   </main>
 </template>
 
