@@ -5,6 +5,7 @@ module.exports = {
     loaderOptions: {
       sass: {
         data: `
+            @import "${scss}_normalize.scss";
             @import "${scss}_variables.scss";
           `,
       },
