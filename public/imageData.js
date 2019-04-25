@@ -44,7 +44,7 @@ module.exports = [
         name: 'nectarmancer',
       },
       {
-        thumbnail: 'goblin-determination-300x194.jpg',
+        thumbnail: 'goblin-determination-464x300.jpg',
         fullsize: 'goblin-determination.jpg',
         name: 'goblin-determination',
       },
@@ -59,7 +59,7 @@ module.exports = [
         name: 'leprechaun2018',
       },
       {
-        thumbnail: 'DnDlineup-300x300.jpg',
+        thumbnail: 'DnDlineup-1100x300.jpg',
         fullsize: 'DnDlineup.jpg',
         name: 'DnDlineup',
       },

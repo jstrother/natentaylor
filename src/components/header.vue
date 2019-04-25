@@ -32,7 +32,7 @@ header {
   img {
     align-self: center;
     margin: auto;
-    max-width: 99.99%;
+    max-width: 99.7%;
     height: auto;
     border: $borderStyle;
   }

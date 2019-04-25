@@ -86,7 +86,11 @@ main {
   align-items: center;
   color: $textColor;
   text-align: center;
-  width: 100%;
+  max-width: 100%;
+
+  img {
+    max-width: 99.99%;
+  }
 
   .imagesDisplay {
     display: flex;
