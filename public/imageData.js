@@ -26,7 +26,7 @@ module.exports = [
   },
   // end of Illustration
   {
-    routeName: 'Fantasy',
+    routeName: 'Character Design',
     images: [
       {
         thumbnail: 'animalGirl_redux2-1-258x300.jpg',
@@ -88,12 +88,6 @@ module.exports = [
         fullsize: 'arcticFox-1.jpg',
         name: 'arcticFox-1',
       },
-    ],
-  },
-  // end of Fantasy
-  {
-    routeName: 'Critters',
-    images: [
       {
         thumbnail: 'corgi-300x300.jpg',
         fullsize: 'corgi.jpg',
@@ -134,6 +128,14 @@ module.exports = [
         fullsize: 'countCudula.jpg',
         name: 'countCudula',
       },
+      
+    ],
+  },
+  // end of Fantasy
+  {
+    routeName: 'Critters',
+    images: [
+      
     ],
   },
   // end of Critters
