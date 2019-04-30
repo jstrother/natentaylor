@@ -52,7 +52,7 @@ export default {
   methods: {
     getThumbnailURL(thumbnail) {
       if (thumbnail) {
-        return require(`../../public/images/thumbnails/${thumbnail}`);
+        return require(`@/images/thumbnails/${thumbnail}`);
       }
     },
     showModal(fullsize, name) {
