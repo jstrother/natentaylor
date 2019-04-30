@@ -128,20 +128,6 @@ module.exports = [
         fullsize: 'countCudula.jpg',
         name: 'countCudula',
       },
-      
-    ],
-  },
-  // end of Fantasy
-  {
-    routeName: 'Critters',
-    images: [
-      
-    ],
-  },
-  // end of Critters
-  {
-    routeName: 'Mermaids',
-    images: [
       {
         thumbnail: 'badaliMermaid_sfw-233x300.jpg',
         fullsize: 'badaliMermaid_sfw.jpg',
@@ -194,7 +180,7 @@ module.exports = [
       },
     ],
   },
-  // end of Mermaids
+  // end of Character Design
   {
     routeName: 'The Wonderful World of Corporate Synergy',
     images: [
