@@ -1,5 +1,5 @@
 <template>
-  <nav>
+  <nav ref="menu">
     <div class="menuToggle" ref="menuToggle">
       <p @click="toggleMenu">Menu</p>
       <i
@@ -36,7 +36,6 @@
 </template>
 
 <script>
-import { mixin as clickaway } from 'vue-clickaway';
 import imageData from '../../public/imageData';
 
 export default {
@@ -45,7 +44,12 @@ export default {
       imageData,
     };
   },
-  mixins: [clickaway],
+  created() {
+    window.addEventListener('click', this.close);
+  },
+  beforeDestroy() {
+    window.removeEventListener('click', this.close);
+  },
   methods: {
     menuItemSelect(routeName) {
       this.$store.commit('menuItemSelect', routeName);
@@ -55,6 +59,11 @@ export default {
     },
     storeClicked() {
       this.$store.commit('storeClicked');
+    },
+    close(event) {
+      if (!this.$refs.menu.contains(event.target)) {
+        this.$store.commit('showMenu');
+      }
     },
   },
   computed: {
