@@ -1,10 +1,7 @@
 <template>
   <header>
     <a href="https://www.natentaylor.com">
-      <img
-        src="@/images/NateTaylor_marketplaceBanner.jpg"
-        alt="Nate Taylor and Art Thereby"
-      />
+      <img src="@/images/NateTaylor_marketplaceBanner.jpg" alt="Nate Taylor and Art Thereby" />
     </a>
     <Nav />
   </header>

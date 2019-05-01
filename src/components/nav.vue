@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <div class="menuToggle">
+    <div class="menuToggle" ref="menuToggle">
       <p @click="toggleMenu">Menu</p>
       <i
         class="fas fa-arrow-alt-circle-down icon"
@@ -13,7 +13,7 @@
         @click="toggleMenu"
       ></i>
     </div>
-    <div id="openMenu" class="openMenu" :class="{ hidden: showMenu }">
+    <div id="openMenu" class="openMenu" ref="openMenu" :class="{ hidden: showMenu }">
       <div v-for="(imageItem, index) in imageData" :key="index" class="menuItem">
         <div
           class="link"
@@ -36,16 +36,16 @@
 </template>
 
 <script>
+import { mixin as clickaway } from 'vue-clickaway';
 import imageData from '../../public/imageData';
 
 export default {
   data() {
     return {
       imageData,
-      subMenuClosed: 'subMenuClosed',
-      subMenuOpen: 'subMenuOpen',
     };
   },
+  mixins: [clickaway],
   methods: {
     menuItemSelect(routeName) {
       this.$store.commit('menuItemSelect', routeName);
@@ -60,9 +60,6 @@ export default {
   computed: {
     showMenu() {
       return this.$store.getters.getMenuStatus;
-    },
-    subMenu() {
-      return this.$store.state.subMenuHidden;
     },
     route() {
       return this.$store.state.routeName;

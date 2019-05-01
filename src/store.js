@@ -29,7 +29,6 @@ export default new Vuex.Store({
     menuItemSelect(state, routeName) {
       state.routeName = routeName;
       state.menuHidden = true;
-      state.subMenuHidden = true;
       state.modalHidden = true;
     },
     showMenu(state) {
@@ -51,7 +50,6 @@ export default new Vuex.Store({
     },
     storeClicked(state) {
       state.menuHidden = true;
-      state.subMenuHidden = true;
     },
   },
 });
