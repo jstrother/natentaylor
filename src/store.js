@@ -42,6 +42,9 @@ export default new Vuex.Store({
       state.fullsizeName = '';
       state.modalHidden = true;
     },
+    closeMenu(state) {
+      state.menuHidden = true;
+    },
     fullsizeImage(state, payload) {
       state.fullsizeImage = payload;
     },
