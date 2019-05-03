@@ -62,7 +62,7 @@ export default {
     },
     close(event) {
       if (!this.$refs.menu.contains(event.target)) {
-        this.$store.commit('showMenu');
+        this.$store.commit('closeMenu');
       }
     },
   },
