@@ -16,7 +16,7 @@
           Jim Strother
         </a>
       </p>
-      <a href="https://twitter.com/seattletallguy" target="_blank" rel="noopener noreferrer">
+      <a href="https://twitter.com/jimcodesjs" target="_blank" rel="noopener noreferrer">
         <i class="fab fa-twitter-square"></i>
       </a>
       <a href="https://www.linkedin.com/in/jimstrother/" target="_blank" rel="noopener noreferrer">
