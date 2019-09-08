@@ -1,29 +1,3 @@
 # natentaylor
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+A complete website rebuild for a local artist with emphasis on ease of maintenance for the client. The only thing that he will need to do is to update public/imageData.js, upload full-size image and thumbnail to appropriate folders, run the build command, and upload code to preferred web host. 
