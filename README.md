@@ -1,3 +1,3 @@
 # natentaylor
 
-A complete website rebuild for a local artist with emphasis on ease of maintenance for the client. The only thing that he will need to do is to update public/imageData.js, upload full-size image and thumbnail to appropriate folders, run the build command, and upload code to preferred web host. 
+A complete website rebuild for a local artist with emphasis on ease of maintenance for the client. The only thing that he will need to do is to update public/imageData.js, upload full-size image and thumbnail to appropriate folders, run the build command, and upload code to preferred web host. The site was also built with a mobile-first design to accomodate various screen sizes.
